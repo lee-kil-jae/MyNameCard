@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="vmMain"
+            type="com.studiolkj.mynamecard.viewmodel.MainViewModel" />
+        <import
+            type="com.studiolkj.mynamecard.model.MyNameCardType"
+            alias="NCType"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPairing"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textColor="@color/colorBlackCherry"
+            android:background="@drawable/btn_round5_oatmeal"
+            android:text="@{vmMain.printerState}"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:onClick="@{vmMain::onPairing}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNamecardSimple"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textColor="@color/colorBlackCherry"
+            android:background="@drawable/btn_round5_orange"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/myNameCardSimple"
+            android:onClick="@{(view)-> vmMain.onPrintNameCard(view, NCType.SIMPLE)}"
+            app:layout_constraintTop_toBottomOf="@+id/btnPairing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnNamecardWide"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNamecardWide"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textColor="@color/colorBlackCherry"
+            android:background="@drawable/btn_round5_orange"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/myNameCardWide"
+            android:onClick="@{(view)-> vmMain.onPrintNameCard(view, NCType.SIMPLE_WIDE)}"
+            app:layout_constraintTop_toBottomOf="@+id/btnPairing"
+            app:layout_constraintStart_toEndOf="@+id/btnNamecardSimple"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNamecardDetail"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textColor="@color/colorBlackCherry"
+            android:background="@drawable/btn_round5_orange"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/myNameCardDetail"
+            android:onClick="@{(view)-> vmMain.onPrintNameCard(view, NCType.DETAIL)}"
+            app:layout_constraintTop_toBottomOf="@+id/btnNamecardSimple"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNamecardAndroid"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textColor="@color/colorBlackCherry"
+            android:background="@drawable/btn_round5_orange"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/myNameCardAndroid"
+            android:onClick="@{(view)-> vmMain.onPrintNameCard(view, NCType.FOCUS_ANDROID)}"
+            app:layout_constraintTop_toBottomOf="@+id/btnNamecardDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnNamecardIos"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:textColor="@color/colorBlackCherry"
+            android:background="@drawable/btn_round5_orange"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/myNameCardIos"
+            android:onClick="@{(view)-> vmMain.onPrintNameCard(view, NCType.FOCUS_IOS)}"
+            app:layout_constraintTop_toBottomOf="@+id/btnNamecardAndroid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">길재의 명함</string>
+    <string name="connectingPrinter">프린터 연결 하실? (안하면 명함 출력 못함요.)</string>
+    <string name="connectedPrinter">프린터 연결됨요.</string>
+    <string name="myNameCardSimple">기본 명함 (세로)</string>
+    <string name="myNameCardWide">기본 명함 (가로)</string>
+    <string name="myNameCardDetail">개발자 상세 명함</string>
+    <string name="myNameCardAndroid">android 개발자 명함</string>
+    <string name="myNameCardIos">iOS 개발자 명함</string>
+    <string name="checking">확인 중... (지금 출력하지마라)</string>
+    <string name="connecting">연결 중... (지금 출력하지마라)</string>
+    <string name="connected">연결됨요. (출력해도 됨)</string>
+    <string name="not_connected">연결 안됨. (너 프린터 어디 갔나?)</string>
+
+</resources>
